@@ -1,11 +1,11 @@
-package com.yrontrabalhospringboot.model;
+package com.yrontrabalhospringboot.Model;
 
-
-
-import com.yrontrabalhospringboot.enums.CombustivelEnum;
+import com.yrontrabalhospringboot.Enums.CombustivelEnum;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
@@ -14,24 +14,15 @@ public class VeiculoModel {
     @Id
     @Column( nullable = false )
     private String placa;
-    
-    @Column( nullable = false )
     private String marca;
-
     private String modelo;
-
     private int anoModelo;
-
     private int anoFabricacao;
-
     private String cor;
-
+    @GeneratedValue ( strategy = GenerationType.AUTO)
     private long renavam;
-
-    private double motorizacao;
-
+    private double motorizacao; 
     private double capacidadeTanque;
-
     private CombustivelEnum combustivel;
 
     public String getPlaca() {
